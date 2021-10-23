@@ -1,24 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ZoomImage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="10" translatesAutoresizingMaskIntoConstraints="NO" id="bdr-T0-ONK">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tesla_model_3" translatesAutoresizingMaskIntoConstraints="NO" id="uXH-Wx-L7U">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="uXH-Wx-L7U" firstAttribute="leading" secondItem="CiT-gK-QMK" secondAttribute="leading" id="Awt-fy-RlD"/>
+                                    <constraint firstItem="uXH-Wx-L7U" firstAttribute="trailing" secondItem="CiT-gK-QMK" secondAttribute="trailing" id="IDt-Vy-BBD"/>
+                                    <constraint firstItem="uXH-Wx-L7U" firstAttribute="height" secondItem="qgd-b1-Xnp" secondAttribute="height" id="JhE-hn-cr8"/>
+                                    <constraint firstItem="uXH-Wx-L7U" firstAttribute="bottom" secondItem="CiT-gK-QMK" secondAttribute="bottom" id="c5d-yb-rhj"/>
+                                    <constraint firstItem="uXH-Wx-L7U" firstAttribute="top" secondItem="CiT-gK-QMK" secondAttribute="top" id="m7a-UQ-p2l"/>
+                                    <constraint firstItem="uXH-Wx-L7U" firstAttribute="width" secondItem="qgd-b1-Xnp" secondAttribute="width" id="wlD-nG-cUK"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="CiT-gK-QMK"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="qgd-b1-Xnp"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="bdr-T0-ONK" secondAttribute="bottom" id="7yy-oZ-4lo"/>
+                            <constraint firstItem="bdr-T0-ONK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Kpu-Wn-WMs"/>
+                            <constraint firstItem="bdr-T0-ONK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VjF-2W-kTF"/>
+                            <constraint firstItem="bdr-T0-ONK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VqP-xO-6d4"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="uXH-Wx-L7U" id="R3R-wn-Vv4"/>
+                        <outlet property="scrollView" destination="bdr-T0-ONK" id="2jY-mf-1JU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="114.50892857142857"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tesla_model_3" width="1000" height="1250"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
